@@ -1,0 +1,17 @@
+HELP.md
+target/
+mvnw.cmd
+mvnw
+!**/src/main/**
+!**/src/test/**
+src/main/resources/application.properties
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.mvn
