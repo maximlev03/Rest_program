@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.lviv.iot.spring.first.buisness.GroupService;
 import ua.lviv.iot.spring.first.rest.model.Group;
 
-@RequestMapping("/groups")
+@RequestMapping("/group")
 @RestController
 public class GroupController {
 

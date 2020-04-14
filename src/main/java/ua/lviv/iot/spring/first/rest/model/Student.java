@@ -2,6 +2,7 @@ package ua.lviv.iot.spring.first.rest.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedNativeQuery;
-import javax.persistence.NamedQuery;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -24,7 +24,7 @@ public class Student {
     private String lastName;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -33,7 +33,7 @@ public class Student {
     private Group group;
 
     @JsonIgnoreProperties("students")
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany(mappedBy = "students", cascade = CascadeType.ALL)
     private Set<Subject> subjects;
 
     public Student(String firstName, String lastName) {

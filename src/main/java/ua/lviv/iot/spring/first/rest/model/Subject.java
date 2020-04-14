@@ -15,7 +15,7 @@ import javax.persistence.ManyToMany;
 public class Subject {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
 
     private String name;

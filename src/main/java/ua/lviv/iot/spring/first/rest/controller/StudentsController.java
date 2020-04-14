@@ -42,37 +42,25 @@ public class StudentsController {
         return students.get(studentId);
     }
 
-    @PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE,
-            MediaType.APPLICATION_XML_VALUE })
+    @PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     public Student createStudent(@RequestBody Student student) {
-//        System.out.println(studentService.createStudent(student));
-//
-//        System.out.println(student);
-//        student.setId(idCounter.incrementAndGet());
-//        students.put(student.getId(), student);
-//
-//        return student;
         return studentService.createStudent(student);
 
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<Student> deleteStudent(
-            @PathVariable("id") Integer studentId) {
-        HttpStatus status = students.remove(studentId) == null
-                ? HttpStatus.NOT_FOUND
+    public ResponseEntity<Student> deleteStudent(@PathVariable("id") Integer studentId) {
+        HttpStatus status = students.remove(studentId) == null ? HttpStatus.NOT_FOUND
                 : HttpStatus.OK;
         return ResponseEntity.status(status).build();
 
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Student> updateStudent(
-            @PathVariable("id") Integer studentId,
+    public ResponseEntity<Student> updateStudent(@PathVariable("id") Integer studentId,
             @RequestBody Student student) {
         student.setId(studentId);
-        HttpStatus status = students.replace(studentId, student) == null
-                ? HttpStatus.NOT_FOUND
+        HttpStatus status = students.replace(studentId, student) == null ? HttpStatus.NOT_FOUND
                 : HttpStatus.CREATED;
         return ResponseEntity.status(status).build();
 
