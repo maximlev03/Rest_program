@@ -23,7 +23,7 @@ import ua.lviv.iot.spring.first.rest.model.Student;
 @RestController
 public class StudentsController {
 
-    private Map<Integer, Student> students = new HashMap<Integer, Student>();
+    private Map<Integer, Student> students = new HashMap<>();
 
     @Autowired
     private StudentService studentService;
@@ -63,6 +63,5 @@ public class StudentsController {
         HttpStatus status = students.replace(studentId, student) == null ? HttpStatus.NOT_FOUND
                 : HttpStatus.CREATED;
         return ResponseEntity.status(status).build();
-
     }
 }

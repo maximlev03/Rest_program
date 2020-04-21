@@ -6,9 +6,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({ "ua.lviv.iot.spring.first.dataaccess", "ua.lviv.iot.spring.first.buisness",
+@ComponentScan({ "ua.lviv.iot.spring.first.dataAccess", "ua.lviv.iot.spring.first.buisness",
         "ua.lviv.iot.spring.first.rest.controller" })
-@EnableJpaRepositories({ "ua.lviv.iot.spring.first.dataaccess" })
+@EnableJpaRepositories({ "ua.lviv.iot.spring.first.dataAccess" })
 public class RestApplication {
 
     public static void main(String[] args) {

@@ -15,7 +15,7 @@ import ua.lviv.iot.spring.first.rest.model.Subject;
 public class SubjectController {
 
     @Autowired
-    SubjectService subjectService;
+    private SubjectService subjectService;
 
     @GetMapping
     public List<Subject> getAllSubjects() {
